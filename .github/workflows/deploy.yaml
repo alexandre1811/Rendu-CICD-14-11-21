@@ -30,8 +30,8 @@ jobs:
       - name: "Build App"
         run: npm run build
 
-      #- name: "Run test app"
-       # run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - name: "Run test app"
+        run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
 
       #- name: "Install Ruby"
         #uses: ruby/setup-ruby@v1
