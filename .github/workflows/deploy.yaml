@@ -1,0 +1,45 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - pre-prod
+
+jobs:
+  ci-cd:
+    name: CI/CD
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Init repository"
+        uses: actions/checkout@v2
+
+      - name: "Setup Node"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: "Install dependencies"
+        run: npm install
+
+      #- name: "Run Lint"
+       # run: npm run lint
+
+      #- name: "Run Security Check"
+       # run: npm audit
+
+      - name: "Build App"
+        run: npm run build
+
+      #- name: "Run test app"
+       # run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+
+      #- name: "Install Ruby"
+        #uses: ruby/setup-ruby@v1
+        #with:
+         # ruby-version: 2.7
+
+      #- name: "Install DPL"
+       # run: gem install dpl
+
+      #- name: "Deploy on Heroku"
+       # run: dpl --provider=heroku --app=${{secrets.HEROKU_APP}} --api-key=${{secrets.HEROKU_API_KEY}} --skip_cleanup=true
