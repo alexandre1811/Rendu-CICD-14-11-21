@@ -25,7 +25,7 @@ jobs:
         run: npm run lint
 
       - name: "Run Security Check"
-        run: npm audit
+        run: npm audit --production
 
       - name: "Build App"
         run: npm run build
