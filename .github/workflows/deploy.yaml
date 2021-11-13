@@ -44,5 +44,5 @@ jobs:
       - name: "Deploy on Heroku"
         run: dpl --provider=heroku --app=${{secrets.HEROKU_APP}} --api-key=${{secrets.HEROKU_API_KEY}} --skip_cleanup=true
 
-      - name: "Launch Node Server"
-        run: node server.js
+     # - name: "Launch Node Server"
+      #  run: node server.js
